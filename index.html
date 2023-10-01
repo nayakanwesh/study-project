@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>project study</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <nav >
+        <h1>CSS DOCUMENTATIONS</h1>
+        <div id="menu">
+        <ul>
+          <li><a href="#Introduction">Introduction</a> </li>
+         <li> <a href="#core">Core concept of css</a></li>
+          <li><a href="#selector">CSS Selectors</a></li>
+          <li> <a href="#response">CSS Responsive</a></li>
+          <li><a href="#animation">CSS Animations</a></li>
+          <li><a href="#work">Working with CSS</a></li>
+        </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section id="Introduction">
+        <div class="intro">
+          <h2>Introduction</h2>
+
+          <article>
+            <h3 id="id1">What is CSS?</h3>
+            <p>
+              Cascading Style Sheets, commonly known as CSS, is a fundamental
+              technology used in web development to control the presentation and
+              formatting of web documents. In simpler terms, CSS is responsible
+              for how web content looks and is displayed on a user's screen. CSS
+              works in tandem with HTML (Hypertext Markup Language) and
+              JavaScript to build interactive and visually appealing websites.
+              While HTML defines the structure and content of a web page, CSS
+              takes care of its appearance, including layout, colors, fonts, and
+              spacing. CSS is essential for separating content from design,
+              making websites more maintainable and adaptable. By creating
+              reusable stylesheets, web developers can ensure consistency across
+              a website and quickly update the look and feel of the entire site.
+            </p>
+            <h3>A Brief History of CSS</h3>
+            <p>
+              The history of CSS dates back to the early days of the World Wide
+              Web. Prior to the introduction of CSS, web developers faced
+              significant challenges in controlling the appearance of web pages.
+              Styles were often applied directly within HTML elements using
+              attributes like bgcolor, text, and align, leading to messy and
+              hard-to-maintain code. In 1996, the World Wide Web Consortium
+              (W3C) released CSS1 as a formal specification. CSS1 provided a
+              structured way to describe the visual presentation of web
+              documents. However, early browser support was limited, and
+              developers encountered compatibility issues. CSS2, introduced in
+              1998, brought significant improvements and extended the
+              capabilities of CSS. It introduced features like positioning,
+              floats, and more advanced selectors. This version marked a major
+              step forward in web design and layout possibilities. CSS2.1,
+              published in 2004, focused on clarifying the specifications and
+              improving browser support for existing features. CSS3, introduced
+              in the mid-2000s, is not a single specification but a collection
+              of modules, each adding new capabilities to CSS. This modular
+              approach allows for gradual adoption of new features without
+              waiting for a complete CSS4 specification. CSS3 introduced
+              transformations, animations, gradients, and much more, expanding
+              the creative possibilities for web designers.
+            </p>
+            <h3>Importance of CSS in Web Development</h3>
+            <p>
+              CSS plays a pivotal role in web development for several reasons:
+            </p>
+            <ul>
+              <li>
+                <span>Separation of Concerns:</span> One of the core principles
+                of web development is the separation of concerns. CSS allows for
+                the separation of content (HTML), structure (HTML), and
+                presentation (CSS). This separation makes web development more
+                organized and manageable. Changes to the design can be made
+                without altering the underlying content.
+              </li>
+              <li>
+                <span>Consistency:</span> CSS enables the creation of consistent
+                styles across an entire website. By defining styles in a
+                centralized manner, developers ensure that headings, paragraphs,
+                links, and other elements have a consistent appearance.
+              </li>
+              <li>
+                <span>Maintainability:</span> As websites grow in complexity,
+                maintaining a consistent look and feel becomes challenging. CSS
+                simplifies this task by providing a single source of truth for
+                styles. Changes can be applied universally by updating the CSS
+                rules, reducing maintenance overhead.
+              </li>
+              <li>
+                <span>Adaptability:</span> With the proliferation of devices and
+                screen sizes, responsive web design is essential. CSS, along
+                with media queries, allows developers to create flexible layouts
+                that adapt gracefully to different screen dimensions, making
+                websites accessible on various devices, from smartphones to
+                large desktop monitors.
+              </li>
+              <li>
+                <span>Accessibility:</span> CSS can be used to improve the
+                accessibility of web content. Developers can use CSS to provide
+                proper contrast, define text sizes, and create layouts that work
+                well with screen readers, ensuring that websites are accessible
+                to users with disabilities.
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+      <!--<a href="#Introduction" class="left"><input type="submit" value="BACK"></a>
+      <a href="./ccof.html" class="right"><input type="submit" value="NEXT"></a>-->
+
+    <section id="core">
+        <div class="intro">
+          <h2>Core Concepts of CSS</h2>
+          <article>
+            <p>
+              Before diving into the details of CSS, it's essential to
+              understand some fundamental concepts that underlie its structure
+              and functionality.
+            </p>
+            <h3>Selectors</h3>
+            <p>
+              At the heart of CSS are selectors, which are patterns used to
+              select the HTML elements you want to style. Selectors define the
+              target elements based on their type, attributes, relationships, or
+              other criteria.
+            </p>
+            <ul>
+              <li>
+                <span> Type Selectors:</span> These select elements by their
+                HTML tag name. For example, to select all
+                <p>elements, you would use the selector p.</p>
+              </li>
+              <li>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors"
+                  ><span> Class selector:</span></a
+                >
+                Class selectors target elements with a specific class attribute
+                value. For example, to select all elements with the class
+                "button," you would use the selector button.
+                <code>
+                        .center {
+                            text-align: center;
+                            color: red;
+                          }
+                </code>
+              </li>
+              <li>
+                <span>ID Selectors:</span> ID selectors target a single element
+                with a unique id attribute value. For example, to select an
+                element with the id "header," you would use the selector
+                #header.
+<code>#firstname {
+    background-color: yellow;
+  }</code>
+              </li>
+              <li>
+                <span>Attribute Selectors:</span> These select elements based on
+                their attributes and attribute values. For instance,
+                [data-type="quote"] would select elements with a data-type
+                attribute set to "quote."
+                <code>input[type="text"] {
+                    width: 150px;
+                    display: block;
+                    margin-bottom: 10px;
+                    background-color: yellow;
+                  }
+                  
+                  input[type="button"] {
+                    width: 120px;
+                    margin-left: 35px;
+                    display: block;
+                  }</code>
+
+ </li>
+ </ul>
+     <h3>Properties and Values</h3>
+            <p>
+              CSS properties define the specific style aspects you want to apply
+              to selected elements, while values determine the exact styling for
+              each property. There is a wide range of CSS properties, each
+              responsible for different visual aspects of web elements.
+            </p>
+            <ul>
+              <li>
+                <span>Text Properties:</span>
+
+                color: Specifies the text color (e.g., red, #00ff00, rgb(255, 0,
+                0)). font-family: Sets the font family for text (e.g., "Arial",
+                sans-serif). font-size: Determines the size of text (e.g., 16px,
+                1.2em).
+              </li>
+            </ul>
+            <h3>Box Model</h3>
+            <p>
+              The CSS Box Model is a fundamental concept that defines how
+              elements are rendered in web documents. According to the Box
+              Model, every HTML element is treated as a rectangular box with
+              four components:
+            </p>
+            <ul>
+              <li>
+                <span>Content: </span> actual content of the element, such as
+                text or images.
+              </li>
+              <li>
+                <span>Padding:</span> The space between the content and the
+                element's border.
+              </li>
+              <li>
+                <span>Border: </span> border surrounding the padding and
+                content.
+              </li>
+              <li>
+                <span>Margin:</span> The space between the border and adjacent
+                elements.
+              </li>
+            <li>
+              
+                <img
+                  src="https://media.geeksforgeeks.org/wp-content/uploads/box-model-1.png"
+                  alt=""
+                />
+            </li>
+              </ul>
+            
+          </article>
+        </div>
+      </section>
+      <section id="selector">
+        <div class="intro">
+            <h2> CSS Selectors</h2>
+            <article>
+                <p>CSS selectors are at the heart of applying styles to HTML elements. Selectors define the criteria for targeting specific elements, allowing you to apply CSS rules to those elements.</p>
+                <h3>Type selectors</h3>
+            <ul>
+                <li>Type selectors, also known as tag selectors, target elements based on their HTML tag names. For example, if you want to select all <p> elements on a page to change their font size, you can use the type selector p:
+                    <code>
+                        p {
+                            font-size: 16px;
+                          }
+                            
+                    </code>
+                </li>
+                
+            </ul>
+            <h3>Class Selectors</h3>
+            <p>Class selectors are used to target elements with a specific class attribute value. They are preceded by a dot (.) followed by the class name. For instance, to select all elements with the class "button" and give them a background color, you can use the following class selector:</p>
+            <code>.button {
+                background-color: #ff9900;
+              }
+              </code>
+              <p>In your HTML, you would apply the "button" class to elements like this:</p>
+              <code>button class="button">Click me button>
+              </code>
+              <p>Class selectors are versatile and allow you to style multiple elements with the same class across your website.</p>
+              <h3>ID Selectors</h3>
+              <p>ID selectors are used to target a single HTML element with a unique id attribute value. They are preceded by a hash (#) followed by the id name. Here's an example:</p>
+              <code>#header {
+                font-size: 24px;
+              }
+              </code>
+              <p>n this case, the CSS rule sets the font size to 24 pixels for the element with the id "header." IDs must be unique within a document, so this selector targets only one specific element.</p>
+              <h3>Attribute Selectors</h3>
+              <p>Attribute selectors allow you to target elements based on their attributes and attribute values. You can use square brackets ([]) to enclose the attribute selector and specify the attribute and its value. For example</p>
+              <code>[data-type="quote"] {
+                font-style: italic;
+              }
+              </code>
+              <p>In this rule, the font-style property is applied to elements with a data-type attribute set to "quote."
+
+              </p>
+              <code><blockquote data-type="quote">
+                This is a quoted text.
+              </blockquote>
+              </code>
+              <h3>Pseudo-classes and Pseudo-elements</h3>
+              <p>Pseudo-classes and pseudo-elements are selectors that target elements based on their state or position within the document.</p>
+              <h4>Pseudo-classes</h4>
+              <p>Pseudo-classes start with a colon (:) and allow you to select elements based on user interactions and states. Some common pseudo-classes include:</p>
+              <ul>
+                <li><span>:hover: </span> an element when the user hovers the mouse pointer over it. It's commonly used for interactive elements like links and buttons.
+                    <code>a:hover {
+                        text-decoration: underline;
+                      }
+                      </code>
+
+                </li>
+                <li><span>:active:</span> Selects an element while it is being activated (clicked). It's often used for styling buttons to provide feedback when they are clicked.
+                <code>.button:active {
+                    background-color: #ff5500;
+                  }
+                  </code></li>
+                  <li><span>:focus:</span> Selects an element when it gains focus, typically through keyboard navigation. Useful for styling form inputs.
+                <code>input:focus {
+                    border-color: #007bff;
+                  }
+                  </code></li>
+              </ul>
+
+            </article>
+        </div>
+      </section>
+      <section id="response">
+        <div class="intro">
+          <h2>CSS Responsive :</h2>
+          <article>
+            <h3><u>What is Responsive Web Design?</u></h3>
+            <p>Responsive web design makes your web page look good on all devices
+            Responsive web design uses only HTML and CSS.
+            Responsive web design is not a program or a JavaScript.</p>
+            <h3>Designing For The Best Experience For All Users</h3>
+            <p>Web pages can be viewed using many different devices: desktops, tablets, and phones. Your web page should look good, and be easy to use, regardless of the device.
+
+              Web pages should not leave out information to fit smaller devices, but rather adapt its content to fit any device:</p>
+              <div class="rimg">
+                <div class="pcimg">
+              <img src="https://www.w3schools.com/css/rwd_desktop.png">
+              <br>
+              <q>desktop</q>
+                </div>
+                <div class="tabimg">
+                  <img src="https://www.w3schools.com/css/rwd_tablet.png" alt="">
+                  <br>
+                  &nbsp;<q>Tablet</q>
+                </div>
+                <div class="phimg">
+                  <img src="https://www.w3schools.com/css/rwd_phone.png" alt="">
+                  <br>
+                  <q>Mobile</q>
+                </div>
+              </div>
+              <h3>What is The Viewport?</h3>
+              <p>The viewport is the user's visible area of a web page.</p>
+              <p>The viewport varies with the device, and will be smaller on a mobile phone than on a computer screen.</p>
+              <p>Before tablets and mobile phones, web pages were designed only for computer screens, and it was common for web pages to have a static design and a fixed size.</p>
+              <p>Then, when we started surfing the internet using tablets and mobile phones, fixed size web pages were too large to fit the viewport. To fix this, browsers on those devices scaled down the entire web page to fit the screen.</p>
+              <h3>Setting The Viewport</h3>
+              <p>HTML5 introduced a method to let web designers take control over the viewport, through the <<span>meta</span>> tag.</p>
+              <p>You should include the following <<span>meta</span>> viewport element in all your web pages:</p>
+              <code><<span></span>meta name="viewport" content="width=device-width, initial-scale=1.0"></code>
+              <p>This gives the browser instructions on how to control the page's dimensions and scaling.</p>
+              <p>The <span>width=device-width</span> part sets the width of the page to follow the screen-width of the device (which will vary depending on the device).</p>
+              <p>The<span> initial-scale=1.0 </span> sets the initial zoom level when the page is first loaded by the browser</p>
+              <p>Here is an example of a web page without the viewport meta tag, and the same web page with the viewport meta tag:</p>
+              <div class="viewpoint">
+                <div class="vimg">
+                  <a href="https://www.w3schools.com/css/example_withoutviewport.htm">
+                <img src="https://www.w3schools.com/css/img_viewport1.png" class="vp2">
+                <br><br>
+                <b>without the viewpoint meta tag</b>
+                  </a>
+                </div>
+                <div class="vimg">
+                  <a  href="https://www.w3schools.com/css/example_withviewport.htm">
+                    <img src="https://www.w3schools.com/css/img_viewport2.png" class="vp2">
+                    <br><br>
+                    <b>with the view point meta tag</b>
+                  </a>
+                </div>
+              </div>
+             <h3>Size Content to The Viewport</h3> 
+             <p>Users are used to scroll websites vertically on both desktop and mobile devices - but not horizontally!<br>
+
+              So, if the user is forced to scroll horizontally, or zoom out, to see the whole web page it results in a poor user experience.</p>
+              <p>Some additional rules to follow:</p>
+              <ol class="ol">
+                <li><span> Do NOT use large fixed width elements -</span> For example, if an image is displayed at a width wider than the viewport it can cause the viewport to scroll horizontally. Remember to adjust this content to fit within the width of the viewport.</li>
+                <li><span>Do NOT let the content rely on a particular viewport width to render well -</span> Since screen dimensions and width in CSS pixels vary widely between devices, content should not rely on a particular viewport width to render well.</li>
+                <li><span>Use CSS media queries to apply different styling for small and large screens -</span> Setting large absolute CSS widths for page elements will cause the element to be too wide for the viewport on a smaller device. Instead, consider using relative width values, such as width: 100%. Also, be careful of using large absolute positioning values. It may cause the element to fall outside the viewport on small devices.
+
+                </li>
+              </ol>
+              <h3><u>What is a Grid-View?</u></h3>
+              <p>Many web pages are based on a grid-view, which means that the page is divided into columns:</p>
+              <div class="grid">
+                <div class="gri"></div>
+                <div class="gri"></div>
+                <div class="gri"></div>
+                <div class="gri"></div>
+                <div class="gri"></div>
+                <div class="gri"></div>
+
+              </div>
+              <h3><u>What is a Media Query?</u></h3>
+              <p>Media query is a CSS technique introduced in CSS3.
+
+                It uses the<span> @media</span> rule to include a block of CSS properties only if a certain condition is true.</p>
+                <code>@media only screen and (max-width: 600px) {
+                  body {
+                    background-color: lightblue;
+                  }
+                }</code>
+                <h3><u>Add a Breakpoint</u></h3>
+                <p>Earlier in this tutorial we made a web page with rows and columns, and it was responsive, but it did not look good on a small screen.
+
+                  Media queries can help with that. We can add a breakpoint where certain parts of the design will behave differently on each side of the breakpoint.</p>
+                  <div class="rimg">
+                    <div class="pcimg">
+                  <img src="https://www.w3schools.com/css/rwd_desktop.png">
+                  <br>
+                  <q>desktop</q>
+                    </div>
+                    <div class="phimg">
+                      <img src="https://www.w3schools.com/css/rwd_phone.png" alt="">
+                      <br>
+                      <q>Mobile</q>
+                    </div>
+                  </div>
+                  <p>When the screen (browser window) gets smaller than 768px, each column should have a width of 100%:</p>
+                  <code><a href="https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_breakpoints">CLICK THIS</a></code>
+              
+                <h3><u>Responsive Web Design - Images</u></h3>   
+                <p><span>If the width</span> property is set to a percentage and the height property is set to "auto", the image will be responsive and scale up and down:</p>
+                <h4>example</h4>
+                <code>img {
+                  width: 100%;
+                  height: auto;
+                }
+              <span><a href="https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_image2">click</a></span></code>
+              <h3><u>Responsive Web Design - Videos</u></h3>
+              <p>If the width property is set to 100%, the video player will be responsive and scale up and down:</p>
+              <h4>example</h4>
+              <code>video {
+                width: 100%;
+                height: auto;
+              }</code>
+              <a href="https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_video2"><b>  CLICK IT -TRY YOUR SELF</b></a>
+                    
+          </article>
+          
+        </div>
+      </section>
+      <section id="animation">
+        <div class="intro">
+          <h2>CSS Animations:</h2>
+          <article>
+            <h3><u>What are CSS Animations?</u></h3>
+            <p>An animation lets an element gradually change from one style to another.</p>
+            <p>You can change as many CSS properties you want, as many times as you want.</p>
+            <p>To use CSS animation, you must first specify some keyframes for the animation.</p>
+            <p>Keyframes hold what styles the element will have at certain times.</p>
+            <h3><u>The @keyframes Rule</u></h3>
+            <p>When you specify CSS styles inside the @keyframes rule, the animation will gradually change from the current style to the new style at certain times.
+
+              To get an animation to work, you must bind the animation to an element.
+              
+              The following example binds the "example" animation to the  element. The animation will last for 4 seconds, and it will gradually change the background-color of the element from "red" to "yellow":</p>
+              <h4>Example</h4>
+              <code>/* The animation code */
+                @keyframes example {
+                  from {background-color: red;}
+                  to {background-color: yellow;}
+                }
+                
+                /* The element to apply the animation to */
+                div {
+                  width: 100px;
+                  height: 100px;
+                  background-color: red;
+                  animation-name: example;
+                  animation-duration: 4s;
+                }</code>
+                <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss3_animation1">click it</a>
+                <p><b>Note: </b>The animation-duration property defines how long an animation should take to complete. If the animation-duration property is not specified, no animation will occur, because the default value is 0s (0 seconds). </p>
+                    <p>In the example above we have specified when the style will change by using the keywords <q>from</q> and <q>to</q> (which represents 0% (start) and 100% (complete)).</p>
+                    <p>It is also possible to use percent. By using percent, you can add as many style changes as you like</p>
+                    <h4>Example</h4>
+                    <code>
+                      /* The animation code */
+                      @keyframes example {
+                        0%   {background-color: red;}
+                        25%  {background-color: yellow;}
+                        50%  {background-color: blue;}
+                        100% {background-color: green;}
+                      }
+                      
+                      /* The element to apply the animation to */
+                      div {
+                        width: 100px;
+                        height: 100px;
+                        background-color: red;
+                        animation-name: example;
+                        animation-duration: 4s;
+                      } 
+                      
+                    </code>
+                    <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss3_animation2">click it</a>
+                    
+                <h3><u>Delay an Animation</u></h3>
+                <p>The<span> animation-delay </span> specifies a delay for the start of an animation.
+
+                  The following example has a 2 seconds delay before starting the animation:</p>
+                  <h4>Example.</h4>
+                  <code>div {
+                    width: 100px;
+                    height: 100px;
+                    position: relative;
+                    background-color: red;
+                    animation-name: example;
+                    animation-duration: 4s;
+                    animation-delay: 2s;
+                  }</code>
+                  <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss3_animation_delay">click it</a>
+                  <p>Negative values are also allowed. If using negative values, the animation will start as if it had already been playing for N seconds.
+
+                    In the following example, the animation will start as if it had already been playing for 2 seconds:</p>
+                    <h4>Example</h4>
+                    <code>div {
+                      width: 100px;
+                      height: 100px;
+                      position: relative;
+                      background-color: red;
+                      animation-name: example;
+                      animation-duration: 4s;
+                      animation-delay: -2s;
+                    }</code>
+                    <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss3_animation_delay2">click it</a>
+                   <h3><u>Set How Many Times an Animation Should Run</u></h3> 
+                   <p>The <span>animation-iteration-count</span> property specifies the number of times an animation should run.
+
+                    The following example will run the animation 3 times before it stops:</p>
+                    <h4>Example</h4>
+                    <code>div {
+                      width: 100px;
+                      height: 100px;
+                      position: relative;
+                      background-color: red;
+                      animation-name: example;
+                      animation-duration: 4s;
+                      animation-iteration-count: 3;
+                    }</code>
+                    <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss3_animation_count">click it</a>
+                    <p><span>The following example uses the value "infinite" to make the animation continue for ever:</span></p>
+                    <h4>Example</h4>
+                    <code>div {
+                      width: 100px;
+                      height: 100px;
+                      position: relative;
+                      background-color: red;
+                      animation-name: example;
+                      animation-duration: 4s;
+                      animation-iteration-count: infinite;
+                    }</code>
+                    <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss3_animation_count2">click it</a>
+
+          </article>
+        </div>
+      </section>
+      <section id="work">
+        <div class="intro">
+          <article>
+            <h2>CSS SELECTORS:</h2>
+            <p>CSS selectors are used to select the content you want to style. Selectors are the part of CSS rule set. CSS selectors select HTML elements according to its id, class, type, attribute etc.</p>
+            <p>There are several different types of selectors in CSS.</p>
+            <ol>
+              <li>css element selector</li>
+              <li>css id selectors</li>
+              <li>css class selector</li>
+              <li>css universal selector</li>
+              <li>css group selector</li>
+            </ol>
+            <h3><u> CSS Element Selector</u></h3>
+            <p>The element selector selects the HTML element by name.</p>
+           <code>h2, p {
+            background-color: yellow;
+          }</code>
+          <a href="https://www.w3schools.com/cssref/tryit.php?filename=trycss_sel_element_comma">click it</a>
+          <h3><u>css id selectors</u></h3>
+          <p>The id selector uses the id attribute of an HTML element to select a specific element.
+
+            The id of an element is unique within a page, so the id selector is used to select one unique element!
+            
+            To select an element with a specific id, write a hash (#) character, followed by the id of the element.</p>
+            <h4>Example</h4>
+            <code>#para1 {
+              text-align: center;
+              color: red;
+            }</code>
+            <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_syntax_id">click it</a>
+            <h3><u>The CSS class Selector</u></h3>
+            <p>The class selector selects HTML elements with a specific class attribute.
+
+              To select elements with a specific class, write a period (.) character, followed by the class name.</p>
+              <h4>Example</h4>
+              <code>
+                .center {
+                  text-align: center;
+                  color: red;
+                }
+              </code>
+              <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_syntax_class">click it</a>
+              <h3><u>The CSS Universal Selector</u></h3>
+              <p>he universal selector (*) selects all HTML elements on the page.</p>
+               <h4>Example</h4>
+               <code>* {
+                text-align: center;
+                color: blue;
+              }</code>
+              <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_syntax_universal">click it</a>
+              <h3><u>The CSS Grouping Selector</u></h3>
+              <p>The grouping selector selects all the HTML elements with the same style definitions.
+
+                Look at the following CSS code (the h1, h2, and p elements have the same style definitions)</p>
+                <code>h1 {
+                  text-align: center;
+                  color: red;
+                }
+                
+                h2 {
+                  text-align: center;
+                  color: red;
+                }
+                
+                p {
+                  text-align: center;
+                  color: red;
+                }</code>
+                <p>It will be better to group the selectors, to minimize the code.</p>
+                <p>To group selectors, separate each selector with a comma.</p>
+                <h4>Example</h4>
+                <code>h1, h2, p {
+                  text-align: center;
+                  color: red;
+                }</code>
+                <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_grouping">click it</a>
+                <h3><u>All CSS Simple Selectors</u></h3>
+                <div>
+                  <table>
+                    <tbody>
+                      <tr>
+                        <th style="width: 20%;">SELECTORS</th>
+                        <th style="width: 20%;">EXAMPLE</th>
+                        <th>EXAMPLE DESCRIPTION</th>
+                      </tr>
+                      <tr>
+                        <td>
+                          <a href="https://www.w3schools.com/cssref/sel_id.php">#id</a>
+                        </td>
+                        <td>.inntro</td>
+                        <td>selects all element with class="intro"</td>
+                      </tr><tr>
+                        <td><em><a href="https://www.w3schools.com/cssref/sel_element_class.php">element.class</a></em></td>
+                        <td>p.intro</td>
+                        <td> select only p tag eleement with class="intro"</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <a href="https://www.w3schools.com/cssref/sel_all.php">*</a>
+                        </td>
+                        <td>*</td>
+                        <td>select all selement</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <i> <a href="https://www.w3schools.com/cssref/sel_element.php">element</a> </i>
+                        </td>
+                        <td>p</td>
+                        <td>select all p tag element</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <i> <a href="https://www.w3schools.com/cssref/sel_element_comma.php">element,element</a> </i>
+                        </td>
+                        <td>div,p</td>
+                        <td>select all div tag eelements and p tag elements</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                
+
+
+          </article>
+        </div>
+      </section>
+      
+    </main>
+  </body>
+</html>
